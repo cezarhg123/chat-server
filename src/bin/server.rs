@@ -2,6 +2,7 @@ use std::{io::{Read, Write}, thread};
 
 fn main() {
     let listerner = std::net::TcpListener::bind("192.168.1.12:69").unwrap();
+    //                                          ^^^^^^^^^^^^^ - change this ip to the host's local ip 
     let (mut stream1, _remote_address1) = listerner.accept().unwrap();
     let (mut stream2, _remote_address2) = listerner.accept().unwrap();
     let mut stream1_clone = stream1.try_clone().unwrap();
